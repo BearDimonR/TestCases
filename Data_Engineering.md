@@ -4,7 +4,7 @@
 
 The product is a marketplace where there are **regular_users** (ru) attracted through marketing channels and **trusted_users** (tu) who are partners of the product.
 
-![Untitled](Data%20Engineering%20Testcase%20741b7159e39546b0b2010b832bfd1d72/Untitled.png)
+![Data_Engineering3](Images/Data_Engineering3.png)
 
 - **regular_users** and **trusted_users** can communicate with each other
 - **logins** - aggregated table of user “login” activities. UK: id_ru, date_login, platform
@@ -33,7 +33,7 @@ Duplicate UK examples:
     /* we also can use COUNT(id_ru) for optimization purpose */
     ```
     
-    ![Untitled](Data%20Engineering%20Testcase%20741b7159e39546b0b2010b832bfd1d72/Untitled%201.png)
+    ![Data_Engineering1](Images/Data_Engineering1.png)
     
     Another option is just to try to add UNIQUE CONSTRAINT on that columns. The database should allow it only if there are no duplicates for the specified set of columns in the table. But is not applicable to BigQuery, so let’s concentrate on the first option.
     
@@ -47,7 +47,7 @@ Duplicate UK examples:
     AND platform='mobile';
     ```
     
-    ![Untitled](Data%20Engineering%20Testcase%20741b7159e39546b0b2010b832bfd1d72/Untitled%202.png)
+    ![Data_Engineering2](Images/Data_Engineering2.png)
     
     Here we can clearly see the possible problem of the duplicates. For some cases, *logins* counter doesn’t increase but creates a duplicate record for the new login. 
     
