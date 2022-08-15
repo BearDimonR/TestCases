@@ -1,4 +1,4 @@
-# Data Engineering Testcase
+# Data Engineering Testcase   Time spent: 6 hours
 
 ## Data Description
 
